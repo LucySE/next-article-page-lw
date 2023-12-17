@@ -1,95 +1,55 @@
 import Image from 'next/image'
-import styles from './page.module.css'
+import styles from './ui/home.module.css'
+import article from './lib/article.json'
+import { PageData } from './lib/definitions'
 
-export default function Home() {
+const Page: React.FC = () => {
+  const pageData: PageData = article
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
+    <div>
+      <header className={styles.header}>
         <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+        src='/logos/sc-logo-color.svg'
+        alt="Safety Culture Logo desktop version"
+        width={200}
+        height={30}
+        className='hidden md:block'
         />
-      </div>
+        </header>
+        <main className={styles.main}>
+      <h1>{pageData.title}</h1>
+      <p>{pageData.description}</p>
+      <hr />
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+      {pageData.content.map((item, index) => (
+        <div key={index}>
+          {item.value && <h2>{item.value}</h2>}
+          {item.paragraph && <p>{item.paragraph}</p>}
+          {item.requirements && <p>{item.requirements}</p>}
+          {item.list && (
+            <ul>
+              {item.list.map((listItem, listItemIndex) => (
+                <li key={listItemIndex}>{listItem}</li>
+              ))}
+            </ul>
+          )}
+        </div>
+      ))}
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
+      <hr />
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
+      <h2>Related Content</h2>
+      {pageData.relatedContent.map((relatedItem, index) => (
+        <div key={index}>
+          <h3>{relatedItem.value}</h3>
+          <p>{relatedItem.description}</p>
+        </div>
+      ))}
+       </main>
+    </div>
+   
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
-}
+  );
+};
+
+export default Page;

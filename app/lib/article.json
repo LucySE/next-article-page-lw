@@ -1,0 +1,34 @@
+{
+    "id":"2cpYUViOXs2Rf0TWJOOWpZ",
+    "title":"Assign actions to users and groups",
+    "slug":"001133",
+    "description":"Learn how to assign actions to users and groups via the web app and the mobile app.",
+    "content":[
+       {
+          "value":"Why assign actions to users and groups?",
+          "paragraph":"Sometimes, having more than one person working on a task can get the job done much quicker. Assigning actions to users and groups allows the team to fulfill projects or maintenance tasks faster within the organization."
+       },
+       {
+          "value":"Any SafetyCulture Plan",
+          "requirements":"Any [SafetyCulture Plan](https://safetyculture.com/pricing/)"
+       },
+       {
+          "value":"Take note",
+          "list":[
+             "Assigning an action to a group notifies all users within that group.",
+             "You won't receive a notification if you assign an action to yourself."
+          ]
+       },
+       {
+          "value":"Groups are useful for assigning actions to multiple users at once. When you assign an action to a group, all users within that group receive a notification.",
+          "description":"The description of the group"
+       }
+    ],
+    "relatedContent":[
+       {
+          "value":"What is an action?",
+          "description":"An action is a task or piece of work that needs to be done. Actions can be assigned to users or groups within your organization."
+       }
+    ]
+ }
+ 

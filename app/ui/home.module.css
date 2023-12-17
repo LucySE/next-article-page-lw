@@ -1,0 +1,19 @@
+.header {
+    background-color: #F0F0FF;
+    padding: 1rem 0;
+    position: sticky;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+}
+.h1 {
+    color: #293745;
+    font-weight: 700;
+    display: block;
+}
+.main {
+    background-color: #FFFFFF;
+    color: #293745;
+    line-height: 1.6;
+    font-weight: 400;
+}
